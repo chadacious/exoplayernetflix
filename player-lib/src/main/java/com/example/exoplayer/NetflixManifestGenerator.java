@@ -335,15 +335,15 @@ public class NetflixManifestGenerator {
                 String str8 = "0-";
                 sb.append(str8);
                 sb.append(j2);
-                xmlSerializer.attribute(str4, "indexRange", sb.toString());
-                xmlSerializer.attribute(str4, "indexRangeExact", NetflixApiUtils.Queries.Values.TRUE);
-                String str9 = "Initialization";
-                xmlSerializer.startTag(str4, str9);
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(str8);
-                sb2.append(j2);
-                xmlSerializer.attribute(str4, "range", sb2.toString());
-                xmlSerializer.endTag(str4, str9);
+//                xmlSerializer.attribute(str4, "indexRange", sb.toString());
+//                xmlSerializer.attribute(str4, "indexRangeExact", NetflixApiUtils.Queries.Values.TRUE);
+//                String str9 = "Initialization";
+//                xmlSerializer.startTag(str4, str9);
+//                StringBuilder sb2 = new StringBuilder();
+//                sb2.append(str8);
+//                sb2.append(j2);
+//                xmlSerializer.attribute(str4, "range", sb2.toString());
+//                xmlSerializer.endTag(str4, str9);
                 xmlSerializer.endTag(str4, str7);
             }
             xmlSerializer.endTag(str4, str3);

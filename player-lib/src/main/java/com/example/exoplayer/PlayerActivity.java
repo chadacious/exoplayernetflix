@@ -87,6 +87,7 @@ public class PlayerActivity extends AppCompatActivity {
     }
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
   @Override
   public void onResume() {
     super.onResume();

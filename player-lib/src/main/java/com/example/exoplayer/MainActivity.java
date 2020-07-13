@@ -27,6 +27,8 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.example.exoplayer.NetflixApiUtils.ApiBaseUrls.MSL_API_URL;
+
 public class MainActivity extends AppCompatActivity {
 
     String TAG = "MainActivity";
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         mWebView.getSettings().setBuiltInZoomControls(false);
         mWebView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         mWebView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.96 Mobile Safari/537.36");
+//        mWebView.getSettings().setUserAgentString(NetflixApiUtils.UserAgent.getFromApiUrl(MSL_API_URL));
         mWebView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
         CookieManager.getInstance().setCookie(".netflix.com", "forceWebsite=true; path=/");
@@ -75,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void loadNetflix(String url) {
         HashMap <String, String> extraHeaders = new HashMap<String, String>();
-        extraHeaders.put("User-Agent", "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36");
-
+//        extraHeaders.put("User-Agent", "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36");
+        extraHeaders.put("User-Agent", "Mozilla/5.0 (X11; CrOS armv7l 13020.82.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.112 Safari/537.36");
+//        extraHeaders.put("User-Agent", NetflixApiUtils.UserAgent.getFromApiUrl(MSL_API_URL));
         mWebView.loadUrl(url, extraHeaders);
 
         mWebView.setWebViewClient(new WebViewClient() {
